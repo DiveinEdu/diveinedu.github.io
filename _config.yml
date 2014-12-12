@@ -1,35 +1,15 @@
-# This is the default format. 
-# For more see: http://jekyllrb.com/docs/permalinks/
-permalink: /:categories/:year/:month/:day/:title 
-
 markdown: redcarpet
 paygments: true
 safe: true
-permalink: /:categories/:year-:month-:day/:title.html
-paginate_path: page/:num
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
+permalink: /:year/:month/:title/ 
+exclude: ["README.md"]
 auto: true
 
-# Themes are encouraged to use these universal variables 
-# so be sure to set them if your theme uses them.
-#
-title : 戴维营教育学习博客
+title: Coding Forever
 author :
   name : diveinedu
   email : divein@yeah.net
   github : diveinedu
   twitter : diveinedu
-  feedburner : feedname
 
 production_url : http://diveinedu.github.io
-
-blog:
-    name : 戴维营教育学习博客
-    description : Coding forever
-    title : 戴维营教育学习博客
-    url : http://diveinedu.github.io
-author:
-    name : 戴维营教育
-    email : divein@yeah.net
-    weibo : http://weibo.com/diveinedu
-    github : https://github.com/diveinedu
