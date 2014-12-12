@@ -1,5 +1,6 @@
 markdown: redcarpet
 paygments: true
+highlighter: pygments
 safe: true
 permalink: /:year/:month/:title/ 
 exclude: ["README.md"]
