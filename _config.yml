@@ -2,7 +2,7 @@ markdown: redcarpet
 paygments: true
 highlighter: pygments
 safe: true
-permalink: /:year/:month/:title/ 
+permalink: /:year/:month/:day/:title.html 
 exclude: ["README.md"]
 auto: true
 
@@ -14,3 +14,7 @@ author :
   twitter : diveinedu
 
 production_url : http://diveinedu.github.io
+
+redcarpet:
+  extensions: [fenced_code_blocks]
+  render_options:
