@@ -5,7 +5,8 @@ permalink: /:categories/:year/:month/:day/:title
 markdown: redcarpet
 paygments: true
 safe: true
-permalink: /:year/:month/:title/ 
+permalink: /:categories/:year-:month-:day/:title.html
+paginate_path: page/:num
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 auto: true
 
@@ -19,8 +20,6 @@ author :
   github : diveinedu
   twitter : diveinedu
   feedburner : feedname
-permalink: /:categories/:year-:month-:day/:title.html
-paginate_path: page/:num
 
 production_url : http://diveinedu.github.io
 
