@@ -2,27 +2,27 @@
 # For more see: http://jekyllrb.com/docs/permalinks/
 permalink: /:categories/:year/:month/:day/:title 
 
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-highlighter: pygments
 markdown: redcarpet
-pygments: true
+paygments: true
+safe: true
+permalink: /:year/:month/:title/ 
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
+auto: true
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Jekyll Bootstrap
-tagline: Site Tagline
+title : 戴维营教育学习博客
 author :
-  name : Name Lastname
-  email : blah@email.test
-  github : username
-  twitter : username
+  name : diveinedu
+  email : divein@yeah.net
+  github : diveinedu
+  twitter : diveinedu
   feedburner : feedname
-pygments: true
-markdown: redcarpet
-highlighter: pygments
 permalink: /:categories/:year-:month-:day/:title.html
 paginate_path: page/:num
+
+production_url : http://diveinedu.github.io
 
 blog:
     name : 戴维营教育学习博客
