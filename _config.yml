@@ -16,14 +16,14 @@ author :
   github : username
   twitter : username
   feedburner : feedname
-markdown: kramdown
+markdown: redcarpet
 highlighter: pygments
 permalink: /:categories/:year-:month-:day/:title.html
 paginate_path: page/:num
 
 blog:
     name : 戴维营教育学习博客
-    description : 温暖岁月,惊艳时光
+    description : Coding forever
     title : 戴维营教育学习博客
     url : http://diveinedu.github.io
 author:
