@@ -3,8 +3,8 @@
 permalink: /:categories/:year/:month/:day/:title 
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-pygments: true
 highlighter: pygments
+pygments: true
 markdown: redcarpet
 
 # Themes are encouraged to use these universal variables 
@@ -20,6 +20,7 @@ author :
   feedburner : feedname
 markdown: redcarpet
 highlighter: pygments
+pygments: true
 permalink: /:categories/:year-:month-:day/:title.html
 paginate_path: page/:num
 
