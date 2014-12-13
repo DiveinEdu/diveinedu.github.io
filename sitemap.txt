@@ -1,0 +1,7 @@
+---
+title: 地图
+---
+{% for page in site.pages %}{% if page.title %}{{site.url}}{{ page.url }}
+{% endif %}{% endfor %}
+{% for post in site.posts %}{{site.url}}{{ post.url }}
+{% endfor %}

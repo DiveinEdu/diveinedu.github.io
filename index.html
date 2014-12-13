@@ -1,0 +1,19 @@
+---
+layout: page
+title: 长沙戴维营教育学习博客
+tagline: Coding forever。
+---
+{% for post in site.posts limit 100 %}
+          <article class="site-abstract">
+            <header>
+              <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+            </header>
+            <div class="abstract">
+              {{ post.excerpt }}
+            </div>
+            <footer>
+              <time pubdate datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y/%m/%d" }}</time>
+              <a href="/categories.html#{{ post.categories.first }}">{{ post.categories.first }}</a>
+            </footer>
+          </article>
+{% endfor %}

@@ -1,0 +1,20 @@
+---
+layout: page
+title: 文章
+group: navigation
+categories: true
+---
+          <ul class="inline">{% for category in site.categories %}
+            <li><a href="#{{ category[0] }}">{{ category[0] | join: "/" }} <small>{{ category[1].size }}</small></a></li>{% endfor %}
+          </ul>
+{% for category in site.categories %}
+          <h2 id="{{ category[0] }}">{{ category[0] | join: "/" }}</h2>
+          <ul>
+{% for post in category[1] %}
+            <li>
+              <a href="{{ post.url }}">{{ post.title }}</a>
+              <small>{{ post.date | date: "%Y/%m/%d" }}</small>
+            </li>
+{% endfor %}
+          </ul>
+{% endfor %}

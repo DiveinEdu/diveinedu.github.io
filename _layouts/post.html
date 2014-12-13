@@ -1,0 +1,31 @@
+---
+layout: default
+---
+      <article class="site-content">
+        <header>
+          <h1>{{ page.title }}</h1>
+          <time pubdate datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y/%m/%d' }}</time>
+          <ul class="tags">{% for tag in page.tags %}
+            <li><a href="/tags.html#{{ tag }}">{{ tag }}</a></li>{% endfor %}
+          </ul>
+        </header>
+        <div class="content">
+{{ content }}
+        </div>
+        <footer>
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+              var disqus_shortname = '{{ site.disqus_short_name }}'
+                , disqus_identifier = '{{ page.id }}'
+                , disqus_title = '{{ page.title | replace: "'", "\\'" }}'
+                , disqus_url = '{{ site.url }}{{ page.url }}'
+
+              !(function() {
+                  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+              })()
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </footer>
+      </article>
