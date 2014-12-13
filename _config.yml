@@ -6,6 +6,9 @@ permalink: /:year/:month/:day/:title.html
 exclude: ["README.md"]
 auto: true
 
+sass:
+    style: :compressed
+
 title: Coding Forever
 author :
   name : diveinedu

@@ -1,0 +1,279 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: $san-serif;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  color: #556;
+}
+
+a, a:visited {
+  color: $primary-color;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  transition: border-bottom-color 500ms;
+
+  &:hover {
+    border-bottom-color: $primary-color;
+  }
+}
+
+@media (max-width: 960px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/**
+ * Site Header
+ */
+
+.site-header {
+  position: fixed;
+  left: 50px;
+  top: 0;
+  width: 250px;
+  background: #FFF;
+  border-bottom: 5px solid #EEE;
+}
+
+.site-header a {
+  border-bottom: none;
+}
+
+.site-header .brand {
+  font-size: 1.8rem;
+  background: $primary-color;
+}
+
+.site-header .brand > a {
+  display: block;
+  text-align: center;
+  line-height: 100px;
+  color: #FFF;
+  transition: background 500ms;
+}
+
+.site-header .brand > a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.site-header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 20px 0;
+  font-size: 0.9rem;
+}
+
+.site-header nav ul > li {
+  display: block;
+}
+
+.site-header nav ul > li > a {
+  display: block;
+  padding: 0 3em;
+  line-height: 7ex;
+  color: #777;
+  transition: background-color 500ms;
+}
+
+.site-header nav ul > li.active {
+  background: rgba(0, 0, 0, 0.02);
+  border-left: 5px solid $primary-color;
+  margin-left: -5px;
+}
+
+.site-header nav ul > li.active > a {
+  color: $primary-color;
+}
+
+.site-header nav ul > li > a:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+  color: $primary-color;
+}
+
+.site-header nav ul > li > ul {
+  padding: 0;
+}
+
+.site-header nav ul > li > ul > li.active {
+  border-left: 5px solid darken($primary-color, 6%);
+}
+
+.site-header nav ul > li > ul > li > a {
+  padding-left: 5em;
+  font-size: 0.9em;
+}
+
+.site-wrapper {
+  background: #FCFCFC;
+  padding: 20px 50px 100px 350px;
+}
+
+@media (max-width: 1080px) {
+  .site-header {
+    left: 0;
+    top: 0;
+    right: 0;
+    width: auto;
+    white-space: nowrap;
+  }
+
+  .site-header .brand {
+    float: left;
+    width: 200px;
+    border-bottom: 5px solid $primary-color;
+    margin-bottom: -5px;
+  }
+
+  .site-header .brand > a {
+    line-height: 50px;
+  }
+
+  .site-header nav {
+    margin-left: 200px;
+  }
+
+  .site-header nav ul {
+    padding: 0;
+  }
+
+  .site-header nav ul > li {
+    display: inline-block;
+  }
+
+  .site-header nav ul > li.active {
+    border-left: none;
+    margin-left: 0;
+    border-bottom: 5px solid $primary-color;
+    margin-bottom: -5px;
+  }
+
+  .site-header nav ul > li > a {
+    display: inline-block;
+    padding: 0 30px;
+    line-height: 50px;
+  }
+
+  .site-header nav ul > li > ul {
+    background-color: rgba(0, 0, 0, 0.05);
+    display: inline-block;
+  }
+
+  .site-header nav ul > li > ul > li.active {
+    border-left: none;
+    border-bottom: 5px solid darken($primary-color, 6%);
+  }
+
+  .site-header nav ul > li > ul > li > a {
+    padding: 0 20px;
+    font-size: 1em;
+  }
+
+  .site-wrapper {
+    padding: 90px 50px 20px;
+  }
+}
+
+@media (max-width: 960px) {
+  .site-header .brand {
+    font-size: 1.2rem;
+    width: 120px;
+  }
+
+  .site-header nav {
+    margin-left: 120px;
+  }
+
+  .site-header nav ul > li > a {
+    padding: 0 20px;
+  }
+
+  .site-header nav ul > li > ul > li > a {
+    padding: 0 20px;
+  }
+
+  .site-wrapper {
+    padding: 90px 20px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-header .brand {
+    overflow: hidden;
+    width: 55px;
+  }
+
+  .site-header .brand > a {
+    width: 0;
+    padding-left: 55px;
+  }
+
+  .site-header nav {
+    margin-left: 55px;
+  }
+
+  .site-wrapper {
+    padding: 90px 10px 10px;
+  }
+}
+
+
+@import "content";
+
+
+/**
+ * Site Abstract
+ */
+
+.site-abstract {
+  margin: 30px 0;
+}
+
+.site-abstract > header {
+  margin-bottom: 10px;
+}
+
+.site-abstract > header h1 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.site-abstract > header h1 a {
+  color: #556;
+  border-bottom: none;
+  transition: color 500ms;
+}
+
+.site-abstract > header h1 a:hover {
+  color: $primary-color;
+}
+
+.site-abstract > .abstract > :not(p) {
+  display: none;
+}
+
+.site-abstract > .abstract > * {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  line-height: 1.5 !important;
+  font-size: 0.9rem;
+  color: #778;
+}
+
+.site-abstract > footer {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: #778;
+}
+
+.site-abstract > footer a {
+  border-bottom: none;
+}
+
+
+@import "footer";
