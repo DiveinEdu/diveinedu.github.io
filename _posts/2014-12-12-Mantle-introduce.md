@@ -4,7 +4,6 @@ category : 翻译
 tagline: "Supporting tagline"
 tags : [Mantle, 模型, JSON, Objective-C]
 ---
-{% include JB/setup %}
 #Mantle
 **Mantle**是一个iOS模型框架，它为对象和JSON之间的相互转化提供了一种简便的方法。这在处理网络数据的时候非常有用。
 下面我们将看一下`MTLModel`、`MTLJSONAdapter`以及为什么你将会考虑在下一个项目中使用Mantle。
