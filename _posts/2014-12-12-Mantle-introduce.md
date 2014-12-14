@@ -1,8 +1,8 @@
 ---
 layout: post
-category : lessons
+category : 翻译
 tagline: "Supporting tagline"
-tags : [intro, beginner, jekyll, tutorial]
+tags : [Mantle, 模型, JSON, Objective-C]
 ---
 {% include JB/setup %}
 #Mantle
