@@ -1,3 +1,9 @@
+---
+layout: post
+category : 翻译
+tagline: "Supporting tagline"
+tags : [Metal, 模型, 3D, Swift, Objective-C]
+---
 ##Metal第一课：清屏
 这是Metal系列教程的第一课，主要介绍如何用Metal框架清除屏幕，后面的课程都基于本文之上，带我们一起熟悉3D渲染和图像处理基础。
 
@@ -267,3 +273,11 @@ class MetalView: UIView {
 
 源码下载地址：
 [ClearScreen.zip](Example/ClearScreen.zip)
+
+原文地址：
+[](http://metalbyexample.com/up-and-running-1/)
+
+--------
+长沙戴维营教育iOS开发培训，长沙iOS培训的摇篮
+[http://www.diveinedu.cn](http://www.diveinedu.cn)
+长沙岳麓山国家大学科技园
