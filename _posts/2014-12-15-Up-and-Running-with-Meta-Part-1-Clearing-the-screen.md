@@ -11,14 +11,14 @@ tags : [Metal, 模型, 3D, Swift, Objective-C]
 
 ####创建新工程
 下面我们使用Xcode的*Single View Application*模版创建项目。它会替我们创建一个视图控制器并设置在窗口上。
-![](../images/xcode_ios_templates.png)
+![](mages/xcode_ios_templates.png)
 
 在“Build Phases > Link Binary with Libraries“中添加对Metal.framework和QuartzCore.frame的支持。
-![](../images/add_metal_framework.png)
+![](/images/add_metal_framework.png)
 
 ####UIKit界面
 UIView使用Core Animation中的CALayer对象来处理实际的屏幕绘制操作。我们可以通过重载UIView的`+layerClass`方法改变UIView所使用的CALayer对象的类型。下面我们创建一个自定义的MetalView类（File > New > File...）。
-![](../images/add_custom_view.png)
+![](/images/add_custom_view.png)
 
 在MetalView.swift中引入Metal和QuartzCore。
 
@@ -36,7 +36,7 @@ import QuartzCore
 
 class MetalView : UIView {
     
-    override class func layerClass () -> AnyClass {
+    override class func layerClass (-> AnyClass {
         return CAMetalLayer.self
     }
 
@@ -49,7 +49,7 @@ class MetalView : UIView {
 #import <QuartzCore/QuartzCore>
 
 @implementation MetalView
-+ (id) layerClass
++ () layerClass
 {
 	return [CAMetalLayer class];s
 }
@@ -83,8 +83,8 @@ Metal layer需要知道哪个设备将会被渲染到它里面。通过设置lay
 var _metalLayer: CAMetalLayer!
 var _device: MTLDevice!
 
-required init(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
+required init(der aDecoder: NSCoder) {
+    super.init(der: aDecoder)
 
     _metalLayer = self.layer as CAMetalLayer
     _device = MTLCreateSystemDefaultDevice()
@@ -94,12 +94,12 @@ required init(coder aDecoder: NSCoder) {
 ```
 
 ```objc
-- (instancetype)initWithCoder:(NSCoder *)aDecoder
+- (stancetype)initWithCoder:(Coder *)aDecoder
 {
-	if ((self = [super initWithCoder: aDecoder]))
+	if (elf = [super initWithCoder: aDecoder]))
     {
-    	_metalLayer = (CAMetalLayer *)[self layer];
-        _device = MTLCreateSystemDefaultDevice();
+    	_metalLayer = (MetalLayer *)[self layer];
+        _device = MTLCreateSystemDefaultDevice(
         _metalLayer.device = _device;
         _metalLayer.pixelFormat = MTLPixelFormatBGRAUnorm;
     }
@@ -112,13 +112,13 @@ required init(coder aDecoder: NSCoder) {
 在后面的文章中我们会在`-redraw`方法中添加绘制命令，但是现在只是使用一种固定的颜色来清理屏幕，因此只需要调用`-redraw`方法一次。我们通过重写`-didMoveToWindow`方法来进行绘制。
 
 ```swift
-override func didMoveToWindow() {
+override func didMoveToWindow({
     self.redraw()
 }
 ```
 
 ```objc
-- (void)didMoveToWindow
+- (id)didMoveToWindow
 {
 	[self redraw];
 }
@@ -153,7 +153,7 @@ let passDescriptor = MTLRenderPassDescriptor()
 passDescriptor.colorAttachments[0].texture = texture;
 passDescriptor.colorAttachments[0].loadAction = .Load
 passDescriptor.colorAttachments[0].storeAction = .Store
-passDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(1.0, 0.0, 0.0, 1.0)
+passDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(0, 0.0, 0.0, 1.0)
 ```
 
 ```objc
@@ -161,7 +161,7 @@ MTLRenderPassDescriptor *passDescriptor = [MTLRenderPassDescriptor renderPassDes
 passDescriptor.colorAttachments[0].texture = texture;
 passDescriptor.colorAttachments[0].loadAction = MTLLoadActionClear;
 passDescriptor.colorAttachments[0].storeAction = MTLStoreActionStore;
-passDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(1.0, 0.0, 0.0, 1.0);
+passDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(0, 0.0, 0.0, 1.0);
 ```
 
 渲染描述符用来配置渲染命令。
@@ -190,7 +190,7 @@ id<MTLCommandBuffer> commandBuffer = [commandQueue commandBuffer];
 *command encoder*是一个用来告诉Metal如何绘制的对象。它负责将这些上层命令（设置shader参数、绘制三角形等）转化为对应的底层指令，然后写入相应的命令缓存。一旦完成所有的绘制调用，给编码器发送`endEncoding`消息就可以结束编码。
 
 ```swift
-let commandEncoder = commandBuffer.renderCommandEncoderWithDescriptor(passDescriptor)
+let commandEncoder = commandBuffer.renderCommandEncoderWithDescriptor(ssDescriptor)
 commandEncoder?.endEncoding()
 ```
 
@@ -202,7 +202,7 @@ id<MTLRenderCommandEncoder> commandEncoder = [commandBuffer renderCommandEncoder
 最后，一旦前面所有的命令都完成了，命令缓存就会发送绘制信号。我们通过调用`commit`来标明这个命令缓存意见完成，可以放入命令队列中供GPU执行。这样我们的帧缓存就会被红色填满。
 
 ```swift
-commandBuffer.presentDrawable(drawable);
+commandBuffer.presentDrawable(awable);
 commandBuffer.commit()
 ```
 
@@ -213,7 +213,7 @@ commandBuffer.commit()
 
 ####编译运行
 编译运行就可以看到效果了。当然，Metal应用目前还只能在真机上运行。
-![](../images/clear_screen_result.png)
+![](/images/clear_screen_result.png)
 
 ```swift
 //
@@ -221,7 +221,7 @@ commandBuffer.commit()
 //  ClearScreen
 //
 //  Created by WuQiong on 14/12/15.
-//  Copyright (c) 2014年 戴维营教育. All rights reserved.
+//  Copyright ( 2014年 戴维营教育. All rights reserved.
 //
 
 import UIKit
@@ -232,8 +232,8 @@ class MetalView: UIView {
     var _metalLayer: CAMetalLayer!
     var _device: MTLDevice!
     
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    required init(der aDecoder: NSCoder) {
+        super.init(der: aDecoder)
         
         _metalLayer = self.layer as CAMetalLayer
         _device = MTLCreateSystemDefaultDevice()
@@ -241,38 +241,38 @@ class MetalView: UIView {
         _metalLayer.pixelFormat = .BGRA8Unorm
     }
     
-    override class func layerClass () -> AnyClass {
+    override class func layerClass (-> AnyClass {
         return CAMetalLayer.self
     }
 
-    override func didMoveToWindow() {
-        self.redraw();
+    override func didMoveToWindow({
+        self.redraw(
     }
     
-    func redraw() {
-        let drawable = _metalLayer.nextDrawable();
+    func redraw({
+        let drawable = _metalLayer.nextDrawable(
         let texture = drawable.texture;
         
         let passDescriptor = MTLRenderPassDescriptor()
         passDescriptor.colorAttachments[0].texture = texture;
         passDescriptor.colorAttachments[0].loadAction = .Clear
         passDescriptor.colorAttachments[0].storeAction = .Store
-        passDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(1.0, 0.0, 0.0, 1.0)
+        passDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(0, 0.0, 0.0, 1.0)
         
         let commandQueue = _device.newCommandQueue()
         let commandBuffer = commandQueue.commandBuffer()
         
-        let commandEncoder = commandBuffer.renderCommandEncoderWithDescriptor(passDescriptor)
+        let commandEncoder = commandBuffer.renderCommandEncoderWithDescriptor(ssDescriptor)
         commandEncoder?.endEncoding()
         
-        commandBuffer.presentDrawable(drawable);
+        commandBuffer.presentDrawable(awable);
         commandBuffer.commit()
     }
 }
 ```
 
 源码下载地址：
-[ClearScreen.zip](../Example/ClearScreen.zip)
+[ClearScreen.zip](/Example/ClearScreen.zip)
 
 原文地址：
 [](http://metalbyexample.com/up-and-running-1/)
