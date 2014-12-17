@@ -279,7 +279,7 @@ class MetalView: UIView {
 [ClearScreen.zip](/Example/ClearScreen.zip)
 
 原文地址：
-[](http://metalbyexample.com/up-and-running-1/)
+[http://metalbyexample.com/up-and-running-1/](http://metalbyexample.com/up-and-running-1/)
 
 --------
 长沙戴维营教育iOS开发培训，长沙iOS培训的摇篮
