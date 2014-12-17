@@ -11,13 +11,16 @@ tags : [Metal, 模型, 3D, Swift, Objective-C]
 
 ####创建新工程
 下面我们使用Xcode的*Single View Application*模版创建项目。它会替我们创建一个视图控制器并设置在窗口上。
-![](mages/xcode_ios_templates.png)
+
+![](/images/xcode_ios_templates.png)
 
 在“Build Phases > Link Binary with Libraries“中添加对Metal.framework和QuartzCore.frame的支持。
+
 ![](/images/add_metal_framework.png)
 
 ####UIKit界面
 UIView使用Core Animation中的CALayer对象来处理实际的屏幕绘制操作。我们可以通过重载UIView的`+layerClass`方法改变UIView所使用的CALayer对象的类型。下面我们创建一个自定义的MetalView类（File > New > File...）。
+
 ![](/images/add_custom_view.png)
 
 在MetalView.swift中引入Metal和QuartzCore。
@@ -213,6 +216,7 @@ commandBuffer.commit()
 
 ####编译运行
 编译运行就可以看到效果了。当然，Metal应用目前还只能在真机上运行。
+
 ![](/images/clear_screen_result.png)
 
 ```swift
