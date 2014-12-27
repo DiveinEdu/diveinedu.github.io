@@ -31,12 +31,12 @@ var foo = function() {
     }
 };
 foo();
-
 //等价
 var foo=function(){for(var i=0;i<10;i++){alert(i);}};foo();
 ```
 
 ####保留字（关键字）
+
 在定义标识符的时候不能使用关键字或保留字。
 
 - ECMAScript 6的关键字
@@ -64,6 +64,7 @@ var foo=function(){for(var i=0;i<10;i++){alert(i);}};foo();
 |protected|private||
 
 - ECMAScript老规范中的关键字（ECMAScript 1-3）
+
 |abstract|final|native|
 |--------|-----|------|
 |boolean|float|short|
@@ -71,10 +72,13 @@ var foo=function(){for(var i=0;i<10;i++){alert(i);}};foo();
 |char|int|transient|
 |double|long|volatile|
 
+
 - 字面常量`false`、`true`以及`null`也是保留字
+
 
 ####标识符
 标识符作为变量或函数的名字，在后续的代码中可以引用它所表示的变量或函数。标识符的命名必须遵循以下规则：
+
 
 - 不能与保留字（关键字）同名。
 - 只能由字母、数字、`$`以及下划线`_`组成。
