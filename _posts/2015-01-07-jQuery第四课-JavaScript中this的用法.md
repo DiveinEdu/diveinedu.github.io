@@ -4,8 +4,6 @@ category : 翻译
 tagline: "Supporting tagline"
 tags : [jQuery, Javascript, HTML 5]
 ---
-> 本文档由**[长沙戴维营教育](http://www.diveinedu.cn)**整理。
-
 ####`this`关键字的使用
 在JavaScript中使用`this`关键字表示调用方法的对象，这与大部分面向对象语言是一样的。但是由于`call`、`apply`、`bind`等函数的影响，我们可以改变`this`所代指的对象。
 
@@ -86,3 +84,5 @@ obj.sayHello();	//"Hi, my name is Rebecca"
 
 **Tips**
 > `call`与`apply`的区别是，`apply`接收两个参数：`this`和函数的参数数组；而`call`的第一个参数为`this`，但是后面是函数的参数列表。
+
+> 本文档由**[长沙戴维营教育](http://www.diveinedu.cn)**整理。

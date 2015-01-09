@@ -4,8 +4,6 @@ category : 翻译
 tagline: "Supporting tagline"
 tags : [jQuery, Javascript, HTML 5]
 ---
-> 本文档由**[长沙戴维营教育](http://www.diveinedu.cn)**整理。
-
 ####注释
 JavaScript支持与C语言相同的注释方法，单行注释(`//`)和多行注释（`/* */`）。代码中的注释在执行的时候将被忽略，只是起到说明代码的功能，便于代码维护和理解。
 
@@ -759,3 +757,5 @@ for (var i = 0; i < 10; i++) {
     console.log("I have been reached");
 }
 ```
+
+> 本文档由**[长沙戴维营教育](http://www.diveinedu.cn)**整理。
