@@ -24,11 +24,11 @@ blackNode.strokeColor = [SKColor clearColor];
 
 这很奇怪，因为其它使用图片创建的精灵都没有问题，效果图如下：
 
-![](../images/fake_stick_hero_error.png)
+![](/images/fake_stick_hero_error.png)
 
 当时就觉得这个忍者很“强大”，凌空飞翔，估计是个FlappyBird类似的游戏。实际上我们需要的效果是脚踏实地的奔跑小忍者。
 
-![](../images/fake_stick_hero.png)
+![](/images/fake_stick_hero.png)
 
 这非常奇怪，因为所有的精灵都是继承自`SKNode`的`SKSpriteNode`或`SKShapeNode`，但是图片精灵是一层一层往上叠放的。至少慢慢检查：
 
@@ -46,7 +46,7 @@ blackNode.strokeColor = [SKColor clearColor];
 [self heroItems];		//忍者和柱子
 ```
 
-![](../images/fake_stick_hero_no_bg.png)
+![](/images/fake_stick_hero_no_bg.png)
 
 问题是找到了，背景图影响了柱子的显示！可这更奇怪了，柱子是最后添加了，连按钮和忍者都显示了，常理来说，黑色柱子更应该显示才对。由于思维定势，根本就没有往`zPosition`的方向考虑！
 
