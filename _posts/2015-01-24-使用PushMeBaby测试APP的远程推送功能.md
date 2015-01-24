@@ -10,6 +10,7 @@ tags : [iOS, CocoaPods, 依赖管理工具]
 ![](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Art/registration_sequence_2x.png)
 
 推送服务的工作流程：
+
 1. APP向系统注册推送服务。
 2. 设备从APNs请求deviceToken。
 3. 通过代理方法将deviceToken返回给APP。
@@ -22,35 +23,58 @@ tags : [iOS, CocoaPods, 依赖管理工具]
 
 ####环境配置
 使用推送服务有一些必要条件：
+
 1. 开发者账号。
 2. iOS真机（iPhone、iPad、iPod）。
 3. 后台服务器。
 4. 网络。
 
 为了使应用支持推送服务，需要配置Provisioning Profile使它支持Push，和普通的Provisioning Profile文件一样分为Development和Production两个版本。我们使用Development版进行测试。
+
 ![](http://cdn5.raywenderlich.com/wp-content/uploads/2011/05/Screen-shot-2011-05-09-at-5.11.18-PM-250x87.jpg)
 
 接下来创建一个用于应用后台服务器和APNs服务器通信时使用的SSL证书和私钥。
-1. 在**钥匙串访问**工具中获取证书请求文件（CSR）。
+
+1 .在**钥匙串访问**工具中获取证书请求文件（CSR）。
+ 
 ![](http://cdn2.raywenderlich.com/wp-content/uploads/2011/05/Keychain-Access-1-Request-Certificate-500x200.jpg)
-2. 保存请求文件。
+
+2 .保存请求文件。
+
 ![](http://cdn5.raywenderlich.com/wp-content/uploads/2013/04/Keychain-Access-2-Generate-CSR.jpg)
-3. 从**钥匙串访问**工具中导出私钥，将它保存为**PushKey.p12**，输入密码**abcde**。千万别把密码给忘了哈，等下要用的。
+
+3 .从**钥匙串访问**工具中导出私钥，将它保存为**PushKey.p12**，输入密码**abcde**。千万别把密码给忘了哈，等下要用的。
+
 ![](http://cdn2.raywenderlich.com/wp-content/uploads/2011/05/Keychain-Access-3-Export-Private-Key-500x279.jpg)
-4. 登陆**[iOS Dev Center](https://developer.apple.com/ios)**创建*APP ID*和＊Provisioning Profile*。
+
+4 .登陆**[iOS Dev Center](https://developer.apple.com/ios)**创建*APP ID*和＊Provisioning Profile*。
+
 ![](http://cdn3.raywenderlich.com/wp-content/uploads/2013/04/select_certificates_identifiers_profiles-480x269.png)
+
 ![](http://cdn5.raywenderlich.com/wp-content/uploads/2013/04/certificates_identifiers_profiles_section-480x286.png)
+
 ![](http://cdn3.raywenderlich.com/wp-content/uploads/2013/04/create_app_id-480x292.png)
-5. 创建新的App ID时，要注意开启**Push Notification**。
+
+5 .创建新的App ID时，要注意开启**Push Notification**。
+
 ![](http://cdn3.raywenderlich.com/wp-content/uploads/2013/04/registeration_complete-446x320.png)
-6. 最后App ID看起来是这样的。
+
+6 .最后App ID看起来是这样的。
+
 ![](http://cdn2.raywenderlich.com/wp-content/uploads/2013/04/push_app_accordion-480x301.png)
-7. 到这一步，虽然已经开启了推送服务，但是还需要进一步配置，点击**Setting**按钮进行设置。
+
+7 .到这一步，虽然已经开启了推送服务，但是还需要进一步配置，点击**Setting**按钮进行设置。
+
 ![](http://cdn3.raywenderlich.com/wp-content/uploads/2013/04/app_id_settings-480x293.png)
-8. 滚动到最下面，需要创建SSL证书（**Create Certificate**），测试环境使用**Development SSL Certificate**。
-9. 查看证书创建步骤和说明，上传**第1步**得到的证书请求文件。
+
+8 .滚动到最下面，需要创建SSL证书（**Create Certificate**），测试环境使用**Development SSL Certificate**。
+
+9 .查看证书创建步骤和说明，上传**第1步**得到的证书请求文件。
+
 ![](http://cdn2.raywenderlich.com/wp-content/uploads/2013/04/generate_dev_certificate-480x267.png)
-10. 下载生成好的证书，命名为**aps_development.cer**。
+
+10 .下载生成好的证书，命名为**aps_development.cer**。
+
 ![](http://cdn1.raywenderlich.com/wp-content/uploads/2013/04/click_download-480x159.png)
 
 
@@ -58,8 +82,10 @@ tags : [iOS, CocoaPods, 依赖管理工具]
 * * *
 
 > 到了这里，我们有多种选择继续了。
-1. 使用第三方小工具**[PushMeBaby](https://github.com/stefanhafeneger/PushMeBaby)**模拟应用后台服务器发送推送信息。
-2. 搭建应用后台服务器发送推送信息。
+
+1 .使用第三方小工具**[PushMeBaby](https://github.com/stefanhafeneger/PushMeBaby)**模拟应用后台服务器发送推送信息。
+
+2 .搭建应用后台服务器发送推送信息。
 
 
 *****
@@ -192,6 +218,7 @@ Message successfully delivered
 > 甚至可以使用APNs实现一个聊天工具，具体请查看参考资料（4）。
 
 ####参考资料
+
 1. [https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW9](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW9)
 2. [https://github.com/stefanhafeneger/PushMeBaby](https://github.com/stefanhafeneger/PushMeBaby)
 3. [http://www.raywenderlich.com/32960/apple-push-notification-services-in-ios-6-tutorial-part-1](http://www.raywenderlich.com/32960/apple-push-notification-services-in-ios-6-tutorial-part-1)
