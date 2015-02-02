@@ -21,7 +21,7 @@ https://code.google.com/p/webrtc/
 
 https://github.com/EricssonResearch/openwebrtc
 
-我们选择Google的WebRTC项目来构建iOS App的开发框架,因为目前Chrome浏览器和FireFox浏览器的WebRTC支持都是采用该项目.那么问题就来了,既然浏览器里都支持了WebRTC,那我们再去移植编译它到iOS平台干嘛呢,直接用webview 不行? 对,还不行! Apple在这方面已经严重拖后腿了.不过他有他牛逼的Facetime技术,可以随时随地的视频通话,但是他不开源,所以我们只能垂涎了. 故还是老老实实的移植WebRTC吧.非常幸运的是,Google 的Chromium项目开发者已经实现了其WebRTC的Objective-C的一套API了.
+我们[戴维营教育](http://www.diveinedu.cn)为了给学生实战项目中运用WebRTC视频通话技术，选择Google的WebRTC项目来构建iOS App的开发框架,因为目前Chrome浏览器和FireFox浏览器的WebRTC支持都是采用该项目.那么问题就来了,既然浏览器里都支持了WebRTC,那我们再去移植编译它到iOS平台干嘛呢,直接用webview 不行? 对,还不行! Apple在这方面已经严重拖后腿了.不过他有他牛逼的Facetime技术,可以随时随地的视频通话,但是他不开源,所以我们只能垂涎了. 故还是老老实实的移植WebRTC吧.非常幸运的是,Google 的Chromium项目开发者已经实现了其WebRTC的Objective-C的一套API了.
 
 
 不过,丑话还是说在前头好,要从零开始集成WebRTC到我们的App中中, 简直就是噩梦;因为WebRTC项目和Chromium项目有一定的关联依赖关系,而且这些项目都是跨平台的大项目,采用了Google自己的一套编译系统,相对我们日常的IDE来说要复杂的多.如果我们需要得到一个WebRTC的库或者框架,我们就需要忘记Xcode IDE和Interface Builder这些高科技,我们要切换到终端环境下用命令行下的黑科技来征服这一切.
@@ -302,6 +302,8 @@ wuqiong:webrtc apple$
 * OpenGLES.framework
 * QuartzCore.framework
 
+###重要提示
+目前Google官方代码中在ARMv7平台有VP8视频编码的stackoverflow问题，会直接导致程序崩溃，如需了解详情并获取补丁，请联系[戴维营教育](http://www.diveinedu.cn)。
 
 > 本文档由**[长沙戴维营教育](http://www.diveinedu.cn)**整理。
 
