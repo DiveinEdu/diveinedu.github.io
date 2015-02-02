@@ -4,16 +4,21 @@ category : 原创
 tagline: "WebRTC视频聊天"
 tags : [WebRTC, 视频聊天, 开源框架, iOS, XMPP]
 ---
-#第五章 WebRTC的框架编译
+#第五章 WebRTC的iOS框架编译
 
-##1.WebRTC框架的选择
+##1.WebRTC的iOS框架的选择
 目前两个比较活跃的开源WebRTC实现.
 
 * Google WebRTC:
+
 项目地址是:
+
 https://code.google.com/p/webrtc/
+
 * Ericsson Research OpenWebRTC:
+
 项目地址是:
+
 https://github.com/EricssonResearch/openwebrtc
 
 我们选择Google的WebRTC项目来构建iOS App的开发框架,因为目前Chrome浏览器和FireFox浏览器的WebRTC支持都是采用该项目.那么问题就来了,既然浏览器里都支持了WebRTC,那我们再去移植编译它到iOS平台干嘛呢,直接用webview 不行? 对,还不行! Apple在这方面已经严重拖后腿了.不过他有他牛逼的Facetime技术,可以随时随地的视频通话,但是他不开源,所以我们只能垂涎了. 故还是老老实实的移植WebRTC吧.非常幸运的是,Google 的Chromium项目开发者已经实现了其WebRTC的Objective-C的一套API了.
