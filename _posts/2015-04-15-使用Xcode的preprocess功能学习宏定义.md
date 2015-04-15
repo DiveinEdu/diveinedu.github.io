@@ -58,9 +58,13 @@ int main(int argc, char * argv[]) {
 ![](/images/objc/xcode_preprocess_assistant.png)
 
 参考资料：
-1. [Xcode预处理功能：https://bpoplauschi.wordpress.com/2014/02/20/xcode-preprocess-assistant/](https://bpoplauschi.wordpress.com/2014/02/20/xcode-preprocess-assistant/)
-2. [gcc宏定义Macro：https://gcc.gnu.org/onlinedocs/cpp/Macros.html](https://gcc.gnu.org/onlinedocs/cpp/Macros.html)
-3. [微软宏定义：https://msdn.microsoft.com/en-us/library/503x3e3s.aspx](https://msdn.microsoft.com/en-us/library/503x3e3s.aspx)
-4. [常用宏定义：http://www.cplusplus.com/doc/tutorial/preprocessor/](http://www.cplusplus.com/doc/tutorial/preprocessor/)
+1 .[Xcode预处理功能：https://bpoplauschi.wordpress.com/2014/02/20/xcode-preprocess-assistant/](https://bpoplauschi.wordpress.com/2014/02/20/xcode-preprocess-assistant/)
+
+2 .[gcc宏定义Macro：https://gcc.gnu.org/onlinedocs/cpp/Macros.html](https://gcc.gnu.org/onlinedocs/cpp/Macros.html)
+
+3 .[微软宏定义：https://msdn.microsoft.com/en-us/library/503x3e3s.aspx](https://msdn.microsoft.com/en-us/library/503x3e3s.aspx)
+ 
+4 .[常用宏定义：http://www.cplusplus.com/doc/tutorial/preprocessor/](http://www.cplusplus.com/doc/tutorial/preprocessor/)
+
 > 本文档由**[长沙戴维营教育](http://www.diveinedu.cn)**整理。
 
