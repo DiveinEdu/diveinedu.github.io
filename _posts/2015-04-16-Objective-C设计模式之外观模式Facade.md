@@ -63,6 +63,7 @@ tags : [设计模式, 外观模式, Facade, Objective-C]
 ```
 
 这时的输出结果应该是：
+
 ```bash
 选择显示器：AOC
 选择主板：华硕
@@ -94,6 +95,7 @@ tags : [设计模式, 外观模式, Facade, Objective-C]
 ```
 
 这时客户的代码为：
+
 ```objc
 @interface Client : NSObject
 - (void)assebleComputer;
@@ -108,6 +110,7 @@ tags : [设计模式, 外观模式, Facade, Objective-C]
 ```
 
 输出结果为：
+
 ```bash
 选择显示器：三星
 选择主板：华硕
