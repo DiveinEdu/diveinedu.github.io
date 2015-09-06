@@ -1,49 +1,52 @@
 ---
 layout: default
 ---
-      <article class="site-content">
-        <header>
-          <h1>{{ page.title }}</h1>
-          <time pubdate datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y/%m/%d' }}</time>
-          <ul class="tags">{% for tag in page.tags %}
-            <li><a href="/tags.html#{{ tag }}">{{ tag }}</a></li>{% endfor %}
-          </ul>
-        </header>
-        <div class="content">
-{{ content }}
-        
-          <p><a href="http://io.diveinedu.com">http://io.diveinedu.com</a></p>
-          <p><a href="http://www.diveinedu.com">http://www.diveinedu.com</a></p>
-          <p><a href="http://bbs.diveinedu.com">http://bbs.diveinedu.com</a></p>
-          <p><a href="https://github.com/DiveinEdu-CN">https://github.com/DiveinEdu-CN</a></p>
-          <p><img src="/images/qrcode-diveinedu-mp-weixin.jpg" alt=""></p>
-        </div>
-        <footer>
-          <div id="disqus_thread"></div>
-          <div>
-          </div>
-          <script type="text/javascript">
-              var disqus_shortname = '{{ site.disqus_short_name }}'
-                , disqus_identifier = '{{ page.id }}'
-                , disqus_title = '{{ page.title | replace: "'", "\\'" }}'
-                , disqus_url = '{{ site.url }}{{ page.url }}'
+<article class="site-content">
+<header>
+<h1>{{ page.title }}</h1>
+<time pubdate datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y/%m/%d' }}</time>
+<ul class="tags">{% for tag in page.tags %}
+	<li><a href="/tags.html#{{ tag }}">{{ tag }}</a></li>{% endfor %}
+</ul>
+</header>
+<div class="content">
+	{{ content }}
 
-              !(function() {
-                  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-              })()
-          </script>
-          <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"0","bdPos":"right","bdTop":"102"},"image":{"viewList":["tsina","weixin","qzone","tqq","renren"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["tsina","weixin","qzone","tqq","renren"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-	  <script>
-		  var _hmt = _hmt || [];
-		  (function() {
-		    var hm = document.createElement("script");
-		      hm.src = "//hm.baidu.com/hm.js?6f4d7e35ef14932e224a91c782b5880b";
-		        var s = document.getElementsByTagName("script")[0]; 
-			  s.parentNode.insertBefore(hm, s);
-			  })();
-	  </script>
-          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        </footer>
-      </article>
+	<p><a href="http://io.diveinedu.com">http://io.diveinedu.com</a></p>
+	<p><a href="http://www.diveinedu.com">http://www.diveinedu.com</a></p>
+	<p><a href="http://bbs.diveinedu.com">http://bbs.diveinedu.com</a></p>
+	<p><a href="https://github.com/DiveinEdu-CN">https://github.com/DiveinEdu-CN</a></p>
+	<p><img src="/images/qrcode-diveinedu-mp-weixin.jpg" alt=""></p>
+</div>
+<footer>
+<div id="disqus_thread"></div>
+<div>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"0","bdPos":"right","bdTop":"102"},"image":{"viewList":["tsina","weixin","qzone","tqq","renren"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["tsina","weixin","qzone","tqq","renren"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+<script>
+	var _hmt = _hmt || [];
+	(function() {
+		var hm = document.createElement("script");
+		hm.src = "//hm.baidu.com/hm.js?6f4d7e35ef14932e224a91c782b5880b";
+		var s = document.getElementsByTagName("script")[0]; 
+		s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+<!-- 多说评论框 start -->
+<div class="ds-thread" data-thread-key="请将此处替换成文章在你的站点中的ID" data-title="{{ page.title }}" data-url="{{ page.url }}"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+	var duoshuoQuery = {short_name:"divein"};
+(function() {
+ var ds = document.createElement('script');
+ ds.type = 'text/javascript';ds.async = true;
+ ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+ ds.charset = 'UTF-8';
+ (document.getElementsByTagName('head')[0] 
+  || document.getElementsByTagName('body')[0]).appendChild(ds);
+ })();
+</script>
+<!-- 多说公共JS代码 end -->
+</footer>
+</article>
