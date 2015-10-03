@@ -88,3 +88,6 @@ $ clang keywords.cpp -o keyword
 $ ./keyword
 假
 ```
+
+####参考资料
+1. [https://zh.wikipedia.org/wiki/C替代标记](https://zh.wikipedia.org/wiki/C替代标记)
