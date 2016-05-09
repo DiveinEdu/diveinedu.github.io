@@ -15,7 +15,7 @@ $ gem sources --remove https://rubygems.org/
 $ gem sources -a https://ruby.taobao.org/
 $ gem sources -l
 $ sudo gem update --system
-$ sudo gem install cocoapods
+$ sudo gem install -n /usr/local/bin cocoapods
 $ pod setup
 ```
 
